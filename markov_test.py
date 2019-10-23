@@ -18,3 +18,18 @@ for a, b in tweet_map:
         tweet_dict[a].append(b)
     else:
         tweet_dict[a] = [b]
+
+first = np.random.choice(tweet_text)
+
+while first.islower():
+    first = np.random.choice(tweet_text)
+
+tweet_chain = [first]
+
+num_words = 20
+
+for i in range(num_words):
+    tweet_chain.append(np.random.choice(tweet_dict[tweet_chain[-1]]))
+
+
+print(' '.join(tweet_chain))
