@@ -1,5 +1,5 @@
 import numpy as np
-from helpers import clean_urls
+from cleaners import clean_urls
 
 tweets = clean_urls("trump_tweet.txt")
 tweet_text = tweets.split()
