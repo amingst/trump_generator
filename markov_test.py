@@ -1,6 +1,7 @@
 import numpy as np
+from helpers import clean_urls
 
-tweets = open('trump_tweet.txt', encoding='utf8').read()
+tweets = clean_urls("trump_tweet.txt")
 tweet_text = tweets.split()
 
 
@@ -26,7 +27,7 @@ while first.islower():
 
 tweet_chain = [first]
 
-num_words = 20
+num_words = 46
 
 for i in range(num_words):
     tweet_chain.append(np.random.choice(tweet_dict[tweet_chain[-1]]))
