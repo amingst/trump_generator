@@ -1,5 +1,5 @@
 const PythonShell = require("python-shell").PythonShell;
-const fs = require('fs');
+const writeTweet = require('./FileUtils').writeTweet;
 
 let options = {
   mode: "text",
@@ -12,9 +12,7 @@ module.exports = () => {
   let shell = new PythonShell("markov_generator.py", options);
 
   shell.on("message", message => {
-    fs.writeFile('out.txt', message, (err) => {
-      if (err) throw err
-    })
+    writeTweet('generated.txt', message);
   });
 
   shell.on("error", err => {
