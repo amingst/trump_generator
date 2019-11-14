@@ -14,3 +14,9 @@ shell.on("message", message => {
 shell.on("error", err => {
   console.log(err);
 });
+
+shell.end(err => {
+  if (err) {
+    throw err;
+  }
+});
