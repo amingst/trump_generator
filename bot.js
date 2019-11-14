@@ -1,3 +1,3 @@
 const connector = require("./connector");
 
-connector();
+connector()

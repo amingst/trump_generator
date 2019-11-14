@@ -1,15 +1,19 @@
 const PythonShell = require("python-shell").PythonShell;
+const fs = require('fs');
 
 let options = {
   mode: "text",
-  pythonOptions: ["-u"]
+  pythonOptions: ["-u"],
+  encoding: "utf-8"
 };
 
 module.exports = () => {
   let shell = new PythonShell("markov_generator.py", options);
 
   shell.on("message", message => {
-    console.log(message);
+    fs.writeFile('out.txt', message, (err) => {
+      if (err) throw err
+    })
   });
 
   shell.on("error", err => {
