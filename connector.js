@@ -7,6 +7,7 @@ let options = {
   encoding: "utf-8"
 };
 
+// TODO: Encode message before it's written
 module.exports = () => {
   let shell = new PythonShell("markov_generator.py", options);
 
