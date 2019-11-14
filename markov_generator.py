@@ -1,4 +1,5 @@
 import sys
+import json
 import numpy as np
 from cleaners import clean_urls
 
@@ -35,9 +36,7 @@ def main():
     for i in range(num_words):
         tweet_chain.append(np.random.choice(tweet_dict[tweet_chain[-1]]))
 
-    data = ' '.join(tweet_chain)
-    print(data)
-    # return data
+    print(' '.join(tweet_chain))
 
 
 if __name__ == "__main__":
