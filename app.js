@@ -9,7 +9,7 @@ app.get("/tweet", generateTweet);
 function generateTweet(req, res) {
   let spawn = require("child_process").spawn;
 
-  let process = spawn("python", ["./markov_generator.py"]);
+  let process = spawn("python", ["./python/markov/markov_generator.py"]);
 
   process.stdout.on("data", function(data) {
     res.send(data.toString());

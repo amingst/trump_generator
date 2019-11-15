@@ -35,7 +35,7 @@ def main():
 
     for i in range(num_words):
         tweet_chain.append(np.random.choice(tweet_dict[tweet_chain[-1]]))
-    
+
     out = ' '.join(tweet_chain)
 
     print(out)
